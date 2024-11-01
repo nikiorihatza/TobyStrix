@@ -190,3 +190,32 @@ function startAudio() {
     mainAudio.play();
     isPlaying = true;
 }
+
+// Show the consent box when the page loads and focus on the accept button
+const consentBox = document.getElementById("consentBox");
+const acceptBtn = document.querySelector(".consentButton");
+const rejectBtn = document.querySelector(".rejectButton");
+
+if (document.cookie.indexOf("CookieBy=GeeksForGeeks") === -1) {
+    consentBox.classList.remove("hide");
+    acceptBtn.focus(); // Focus on the accept button
+} else {
+    consentBox.classList.add("hide");
+}
+
+// Handle button clicks
+acceptBtn.onclick = () => {
+    document.cookie = "CookieBy=GeeksForGeeks; max-age=" + 60 * 60 * 24;
+    if (document.cookie) {
+        consentBox.classList.add("hide");
+    } else {
+        alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
+    }
+    startAudio();
+};
+
+rejectBtn.onclick = () => {
+    alert("Cookies rejected. Some functionality may be limited.");
+    startAudio();
+    consentBox.classList.add("hide");
+};

@@ -23,6 +23,7 @@ body, html {
 .coming-soon {
     text-align: center;
     z-index: 1;
+    animation: 3s fadeInUp;
 }
 
 .coming-soon img {
@@ -40,7 +41,8 @@ body, html {
 
 .coming-soon p {
     font-size: 1.2rem; /* Font size for paragraphs */
-    color: #bbb;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 /* Responsive Design for Smaller Screens */
@@ -116,10 +118,99 @@ body, html {
     font-size: 24px; /* Icon size */
 }
 
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .music-toggle {
         font-size: 1.2rem; /* Reduce button font size for smaller screens */
+    }
+}
+
+/* Consent Box Styles */
+#consentBox {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: fixed; /* Centering the consent box */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the consent box */
+    z-index: 100; /* Ensure it stays above other elements */
+}
+
+#consentBox.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+::selection {
+    color: #fff;
+    background: #00d0ff;
+}
+
+#consentContent p {
+    color: #858585;
+    margin: 10px 0 20px 0;
+}
+
+#consentContent .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.consentButton,
+.rejectButton {
+    padding: 12px 30px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px; /* Added margin for spacing */
+}
+
+.consentButton {
+    background: #00d0ff;
+}
+
+.rejectButton {
+    color: #111211;
+    background: transparent;
+    border: 2px solid #00d0ff;
+}
+
+/* Focus styles for accessibility */
+.consentButton:focus,
+.rejectButton:focus {
+    outline: 3px solid #00d0ff; /* Highlight focus */
+}
+
+#consentBox img {
+    max-width: 90px;
+}
+
+#consentHeader {
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
     }
 }
