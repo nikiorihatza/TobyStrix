@@ -1,0 +1,125 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Styling */
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: #111; /* Dark Background */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Main Container */
+.coming-soon {
+    text-align: center;
+    z-index: 1;
+}
+
+.coming-soon img {
+    max-width: 80%; /* Set to 80% of its original size on desktop */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+}
+
+.coming-soon h1 {
+    font-size: 3rem; /* Font size for headings */
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.coming-soon p {
+    font-size: 1.2rem; /* Font size for paragraphs */
+    color: #bbb;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .coming-soon img {
+        max-width: 90%; /* Set to 90% of its original size on smaller screens */
+    }
+
+    .coming-soon h1 {
+        font-size: 2.5rem; /* Reduce heading size */
+    }
+
+    .coming-soon p {
+        font-size: 1rem; /* Reduce paragraph size */
+    }
+
+    .social-icon {
+        font-size: 1.5rem; /* Reduce icon size */
+        margin: 0 10px; /* Adjust space between icons */
+    }
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: #fff; /* Icon color */
+    font-size: 2rem; /* Size of the icons */
+    margin: 0 15px; /* Space between icons */
+    transition: color 0.3s ease; /* Transition effect on hover */
+}
+
+.social-icon:hover {
+    color: #00d0ff; /* Color change on hover */
+}
+
+/* Canvas for Background Animation */
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.music-toggle {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    width: 50px; /* Width of the button */
+    height: 50px; /* Height of the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.music-toggle:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: rgba(0, 0, 0, 0.9); /* Darker on hover */
+}
+
+.music-toggle i {
+    color: white; /* Icon color */
+    font-size: 24px; /* Icon size */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .music-toggle {
+        font-size: 1.2rem; /* Reduce button font size for smaller screens */
+    }
+}
